@@ -1,6 +1,8 @@
 (setq inhibit-start-message t)
 (setq inhibit-startup-screen t)
 (setq ring-bell-function 'ignore)
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 
 (scroll-bar-mode -1) ; Disable visible scrollbar
 (tool-bar-mode -1)   ; Disable the toolbar
@@ -60,13 +62,21 @@
 	     :config
 	     (ivy-mode 1))
 
+;; NOTE: The first time you load your configuration on a new machine, you'll
+;; need to run the following command interactively so that mode line icons
+;; display correctly:
+;;
+;; M-x all-the-icons-install-fonts
+
+(use-package all-the-icons)
+
 (use-package doom-modeline
 	     :ensure t
 	     :init (doom-modeline-mode 1)
 	     :custom ((doom-modeline-height 15)))
 
-(use-package doom-themes)
-(load-theme 'doom-monokai-spectrum t)
+(use-package doom-themes
+  :init (load-theme 'doom-monokai-spectrum t))
 
 (use-package which-key
 	     :init (which-key-mode)
