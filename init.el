@@ -1,3 +1,10 @@
+;; Open emacs frame fullscreen on startup
+(setq initial-frame-alist '((left . 0)
+			    (top . 33)
+			    (width . 1.0)
+			    (height . 47)))
+
+
 (setq inhibit-start-message t)
 (setq inhibit-startup-screen t)
 (setq ring-bell-function 'ignore)
