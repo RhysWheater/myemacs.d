@@ -1,3 +1,6 @@
+;;; Copyright (C) 2023 Rhys Wheater
+
+
 ;; Open emacs frame fullscreen on startup
 (setq initial-frame-alist '((left . 0)
 			    (top . 33)
